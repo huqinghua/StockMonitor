@@ -1,0 +1,127 @@
+object FrmWarn: TFrmWarn
+  Left = 1690
+  Height = 520
+  Top = 250
+  Width = 594
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'A股监控'
+  ClientHeight = 520
+  ClientWidth = 594
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '2.2.6.0'
+  object lv1: TListView
+    Left = 8
+    Height = 486
+    Top = 24
+    Width = 344
+    Columns = <    
+      item
+        Caption = '类型'
+        Width = 70
+      end    
+      item
+        Caption = '消息'
+        Width = 150
+      end    
+      item
+        Caption = '建议操作'
+        Width = 110
+      end>
+    LargeImages = il1
+    ReadOnly = True
+    RowSelect = True
+    SmallImages = il1
+    TabOrder = 0
+    ViewStyle = vsReport
+  end
+  object btnClear: TButton
+    Left = 377
+    Height = 25
+    Top = 24
+    Width = 80
+    Caption = '清空信息'
+    OnClick = btnClearClick
+    TabOrder = 1
+  end
+  object lvStockPrice: TListView
+    Left = 361
+    Height = 305
+    Top = 205
+    Width = 224
+    Columns = <    
+      item
+        Caption = '股票名称'
+        Width = 70
+      end    
+      item
+        Alignment = taRightJustify
+        Caption = '现价'
+        Width = 60
+      end    
+      item
+        Alignment = taRightJustify
+        Caption = '涨跌(%)'
+        Width = 60
+      end>
+    ColumnClick = False
+    ReadOnly = True
+    RowSelect = True
+    TabOrder = 2
+    ViewStyle = vsReport
+  end
+  object Button1: TButton
+    Left = 377
+    Height = 25
+    Top = 66
+    Width = 80
+    Caption = '配    置'
+    OnClick = Button1Click
+    TabOrder = 3
+  end
+  object tmr1: TTimer
+    Enabled = False
+    Left = 324
+    Top = 36
+  end
+  object il1: TImageList
+    Left = 260
+    Top = 132
+    Bitmap = {
+      4C7A0200000010000000100000008E0000000000000078DAEDD33D0E80200C06
+      50464646D68E8C9E8FD523307A57D410B42026B42586C126DFF84AF9536ABEB2
+      EB124D158A370FEF98DEA5788E7763FC6135D9DF6BEB4E5F9F17B6DA03CA7BAF
+      D6DCA585D835BB6FFBEEFD373CF50D62CF7DC7D47BFBAB2C802D4A6C8EC4527B
+      B46C4A88129B43B5D69E0957A87364C7393FBCEEF73E087C18E2718F59FFD80E
+      BC1AE95A
+    }
+  end
+  object IdHTTP1: TIdHTTP
+    ProxyParams.BasicAuthentication = False
+    ProxyParams.ProxyPort = 0
+    Request.ContentLength = -1
+    Request.ContentRangeEnd = -1
+    Request.ContentRangeStart = -1
+    Request.ContentRangeInstanceLength = -1
+    Request.Accept = 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    Request.BasicAuthentication = False
+    Request.UserAgent = 'Mozilla/3.0 (compatible; Indy Library)'
+    Request.Ranges.Units = 'bytes'
+    Request.Ranges = <>
+    HTTPOptions = [hoForceEncodeParams]
+    Left = 180
+    Top = 140
+  end
+  object PopupMenuConfig: TPopupMenu
+    Left = 456
+    Top = 104
+    object MenuItemStockConfig: TMenuItem
+      Caption = '股票监控设置'
+      OnClick = MenuItemStockConfigClick
+    end
+    object MenuItemClockConfig: TMenuItem
+      Caption = '闹钟提醒设置'
+      OnClick = MenuItemClockConfigClick
+    end
+  end
+end

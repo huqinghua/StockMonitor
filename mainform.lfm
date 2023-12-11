@@ -1,0 +1,184 @@
+object FrmMain: TFrmMain
+  Left = 1690
+  Height = 411
+  Top = 250
+  Width = 959
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = '配置中心'
+  ClientHeight = 411
+  ClientWidth = 959
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  object Label1: TLabel
+    Left = 808
+    Height = 16
+    Top = 232
+    Width = 115
+    Caption = '止盈线(元)              '
+    ParentColor = False
+  end
+  object lbl1: TLabel
+    Left = 808
+    Height = 16
+    Top = 296
+    Width = 136
+    Caption = '止损线(元)                    '
+    ParentColor = False
+  end
+  object lbl2: TLabel
+    Left = 808
+    Height = 16
+    Top = 264
+    Width = 166
+    Caption = '上涨提示幅度(%)                  '
+    ParentColor = False
+  end
+  object lbl3: TLabel
+    Left = 808
+    Height = 16
+    Top = 328
+    Width = 163
+    Caption = '下跌预警幅度(%)                 '
+    ParentColor = False
+  end
+  object lvStockWarnConfig: TListView
+    Left = 32
+    Height = 305
+    Top = 40
+    Width = 608
+    Columns = <    
+      item
+        Caption = '股票名称'
+        Width = 90
+      end    
+      item
+        Caption = '股票代码'
+        Width = 90
+      end    
+      item
+        Alignment = taRightJustify
+        Caption = '止盈线'
+        Width = 90
+      end    
+      item
+        Alignment = taRightJustify
+        Caption = '上涨提示幅度(%)'
+        Width = 110
+      end    
+      item
+        Alignment = taRightJustify
+        Caption = '止损线'
+        Width = 90
+      end    
+      item
+        Alignment = taRightJustify
+        Caption = '下跌预警幅度(%)'
+        Width = 120
+      end>
+    ColumnClick = False
+    ReadOnly = True
+    RowSelect = True
+    TabOrder = 0
+    ViewStyle = vsReport
+    OnSelectItem = lvStockWarnConfigSelectItem
+  end
+  object edtName: TEdit
+    Left = 672
+    Height = 22
+    Top = 164
+    Width = 121
+    TabOrder = 1
+  end
+  object edtCode: TEdit
+    Left = 672
+    Height = 22
+    Top = 196
+    Width = 121
+    TabOrder = 2
+  end
+  object edtHighWaterLevel: TEdit
+    Left = 672
+    Height = 22
+    Top = 228
+    Width = 121
+    TabOrder = 3
+  end
+  object edtLowWaterLevel: TEdit
+    Left = 672
+    Height = 22
+    Top = 292
+    Width = 121
+    TabOrder = 4
+  end
+  object edtUpRatio: TEdit
+    Left = 672
+    Height = 22
+    Top = 260
+    Width = 121
+    TabOrder = 5
+  end
+  object edtLowRatio: TEdit
+    Left = 672
+    Height = 22
+    Top = 324
+    Width = 121
+    TabOrder = 6
+  end
+  object btnDelete: TButton
+    Left = 32
+    Height = 25
+    Top = 368
+    Width = 75
+    Caption = '删除'
+    OnClick = btnDeleteClick
+    TabOrder = 7
+  end
+  object btnAdd: TButton
+    Left = 672
+    Height = 25
+    Top = 368
+    Width = 75
+    Caption = '增加/更改'
+    OnClick = btnAddClick
+    TabOrder = 8
+  end
+  object Label2: TLabel
+    Left = 808
+    Height = 16
+    Top = 167
+    Width = 154
+    Caption = '股票名称                            '
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 807
+    Height = 16
+    Top = 198
+    Width = 136
+    Caption = '股票代码                       '
+    ParentColor = False
+  end
+  object btnUp: TButton
+    Left = 670
+    Height = 25
+    Top = 39
+    Width = 75
+    Caption = '上移'
+    OnClick = btnUpClick
+    TabOrder = 9
+  end
+  object btnDown: TButton
+    Left = 671
+    Height = 25
+    Top = 81
+    Width = 75
+    Caption = '下移'
+    OnClick = btnDownClick
+    TabOrder = 10
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    Left = 836
+    Top = 28
+  end
+end
